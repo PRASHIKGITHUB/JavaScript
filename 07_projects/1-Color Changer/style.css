@@ -1,0 +1,50 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  span {
+    display: block;
+  }
+  .canvas {
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center;
+  }
+  nav{
+    height: 100px;
+    background-color: rgba(219, 198, 198, 0.472);
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+  }
+  nav a{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    font-size: larger;
+    color: rgb(235, 128, 111);
+    text-decoration: none;
+  }
+  .button {
+    width: 100px;
+    height: 100px;
+    border: solid black 2px;
+    display: inline-block;
+  }
+  
+  #grey {
+    background: grey;
+  }
+  
+  #white {
+    background: white;
+  }
+  #blue {
+    background: blue;
+  }
+  #yellow {
+    background: yellow;
+  }
+  
