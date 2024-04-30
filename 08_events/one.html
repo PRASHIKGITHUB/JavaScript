@@ -1,3 +1,4 @@
+<!-- lecture number : 36 events in js -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>htnml Events </title>
 </head>
-<body style="background-color: #414141; color: aliceblue;">
+<body style="background-color: #9fd0d5; color: aliceblue;">
     <h2>Amazing image</h2>
     <div >
         <ul id="images">
@@ -31,23 +32,29 @@
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
 
-    // document.getElementById('images').addEventListener('click', function(e){
-    //     console.log("clicked inside the ul");
-    // }, false)
-
-    // document.getElementById('owl').addEventListener('click', function(e){
-    //     console.log("owl clicked");
-    //     e.stopPropagation()
-    // }, false)
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false) 
     
-    // document.getElementById('google').addEventListener('click',function(e){
-    //     e.preventDefault();
-    //     e.stopPropagation()
-    //     console.log("google clicked");
-    // }, false)
+    document.getElementById('owl').addEventListener('click', function(e){
+            console.log("owl clicked");
+            e.stopPropagation() //upper event listener wont't work here bubbling stopped
+        }, false)
+        
+    //*************************************//
+    //false=bubbling(inside event listener will get first priority) and true=capturing (outside event listener will get first priority)
+    // ************************************//
+
+
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation()
+        console.log("google clicked");
+    }, false)
    
     
     document.querySelector('#images').addEventListener('click', function(e){
+        //console.log(e.target) e.target will tell you by which element it is getting targeted like in this case it is getting targeted by image but it is contained in <li><li/> tag
         console.log(e.target.tagName);
         if (e.target.tagName === 'IMG') {
             console.log(e.target.id);
