@@ -14,9 +14,20 @@
     const sayDate = function(str){
         console.log(str, Date.now());
     }
-
+    let temp
+    let x=1
     const intervalId = setInterval(sayDate, 1000, "hi")
-
-    clearInterval(intervalId)
+    const stopFun=function(){   
+        if(x==1){
+            clearInterval(intervalId)
+            x--
+        }
+        clearInterval(temp)
+    }
+    const startFun=function(){   
+        temp=setInterval(sayDate,1000,"hi")
+    }
+    document.querySelector('#stop').addEventListener('click',stopFun)
+    document.querySelector('#start').addEventListener('click',startFun)
 </script>
 </html>
